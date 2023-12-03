@@ -3,7 +3,9 @@
 }
 
 * {
+
   text-decoration: none;
+  box-sizing: border-box;
 }
 
 .App-logo {
@@ -47,6 +49,7 @@
   display: flex;
   column-gap: 15px;
   align-items: center;
+  margin-bottom: 50px;
 }
 
 .header__logo {
@@ -77,4 +80,153 @@
   padding: 0 20px;
   background-color: rgb(227, 225, 225);
   border: none;
+}
+
+.board__slide {
+  background-color: rgb(201, 199, 199);
+  padding: 20px;
+  border-radius: 30px;
+  display: flex;
+  margin-bottom: 40px;
+
+}
+
+.board__img {
+  width: 50px;
+  height: 50px;
+
+}
+
+.board__img:nth-child(2) {
+  transform: rotate(-10deg) translateX(20px);
+
+}
+
+.board__img:nth-child(3) {
+  transform: rotate(10deg) translateX(-20px);
+
+}
+
+.board__img:nth-child(4) {
+  transform: rotate(20deg) translateX(-40px) translateY(10px);
+
+}
+
+.pinPage__wrapper {
+  width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 30px;
+  row-gap: 30px;
+}
+
+.pin__wrapper {
+  border-radius: 20px;
+  position: relative;
+}
+
+.pin__img {
+  width: 100%;
+  max-height: 300px;
+  border-radius: 20px;
+}
+
+.pin__modal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #282c3427;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  top: 0;
+  left: 0px;
+  border-radius: 30px
+}
+
+.active {
+  display: block;
+}
+
+.none {
+  display: none;
+}
+
+.pin__save,
+.pin__complaint {
+  opacity: 100%;
+  width: 100%;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.pin__save .btn,
+.btn {
+  padding: 15px;
+  border: none;
+  background-color: rgb(154, 15, 15);
+  color: aliceblue;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.pin__complaint .btn {
+  padding: 15px;
+  border: none;
+  background-color: rgb(43, 9, 9);
+  color: aliceblue;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.pin__select {
+  background-color: #282c3427;
+  border: none;
+  border-radius: 20px;
+  color: azure;
+}
+
+.Loading {
+  margin: 50px auto;
+  width: 50px;
+  height: 50px;
+  background-color: #282c34;
+  transform: rotate();
+  border-radius: 50%;
+  animation: 3s linear infinite rotate;
+  position: relative;
+}
+
+.Loading::after {
+  position: absolute;
+  top: 50%;
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: beige;
+  border-radius: 50%;
+}
+
+.Loading::before {
+  position: absolute;
+  bottom: 50%;
+  left: 80%;
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: beige;
+  border-radius: 50%;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }

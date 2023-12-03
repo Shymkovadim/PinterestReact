@@ -1,19 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Header } from './components/Header';
-import { Board } from './components/Board';
+import { PinPage } from './components/PinPage';
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
+
 
 function App() {
-  return (
+  return (<Provider store={store}>
     <BrowserRouter>
       <Header></Header>
-
       <Routes>
-        <Route></Route>
+        <Route path='/' element={<PinPage />}></Route>
       </Routes>
-    </BrowserRouter>
+    </BrowserRouter></Provider>
   );
 }
 
