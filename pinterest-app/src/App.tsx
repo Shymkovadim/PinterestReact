@@ -5,6 +5,7 @@ import { Header } from './components/Header';
 import { PinPage } from './components/PinPage';
 import { Provider } from 'react-redux';
 import { store } from './redux/store';
+import { BoardPage } from './components/BoardPage';
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Header></Header>
       <Routes>
         <Route path='/' element={<PinPage />}></Route>
+        <Route path='/board' element={<BoardPage />}></Route>
       </Routes>
     </BrowserRouter></Provider>
   );

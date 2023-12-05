@@ -3,7 +3,9 @@ import { useEffect, useState } from "react"
 import logo from "../assets/images/logo.png"
 import { NavLink } from "react-router-dom"
 import { useDispatch } from "react-redux";
-import { addNewBoard, pinFilter, receivPin } from "../redux/pages/home/pins/action";
+import { pinFilter, receivPin } from "../redux/pages/home/pins/action";
+import { addNewBoard } from "../redux/pages/board/action";
+import { IPin } from "../types";
 
 
 export const Header: React.FC = () => {
@@ -24,7 +26,7 @@ export const Header: React.FC = () => {
 
         const newBoard = {
             name: valueBoard,
-            pinsId: []
+            pin: [],
         };
         if (valueBoard.length > 1) {
             dispatch(addNewBoard(newBoard))

@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from "react-redux"
 import { AppStorage } from "../redux/store"
 import { useState } from "react";
-import { Board, IPin } from "../types";
-import { pinAddOnBoard } from "../redux/pages/home/pins/action";
+import { IPin, PinSaveOnBoard } from "../types";
+import { pinAddOnBoard } from "../redux/pages/board/action";
 
 
 export interface Pin {
@@ -11,12 +11,12 @@ export interface Pin {
 
 export const PinModalWindow: React.FC<Pin> = ({ pin }) => {
     const [value, setValue] = useState('');
-    const { boards } = useSelector((store: AppStorage) => store.pages.home.pins);
+    const { boards } = useSelector((store: AppStorage) => store.pages.board);
     const dispatch = useDispatch();
     const addOnBoard = () => {
-        const newPinBoard: Board = {
-            name: value,
-            pinsId: [pin.id]
+        const newPinBoard: PinSaveOnBoard = {
+            nameBoard: value,
+            pin: pin
         }
         dispatch(pinAddOnBoard(newPinBoard))
     }

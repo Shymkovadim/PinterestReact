@@ -17,7 +17,7 @@ export const Board: React.FC<BoardsProps> = ({ boards }) => (
     >
 
         {boards.map(board => {
-            return <SwiperSlide><NavLink to="/MyBoard">
+            return <SwiperSlide><NavLink to="/Board" state={{ from: board.name }} className="product__wrap" key={board.name}>
                 <div className="board__slide">
                     <h3>{board.name}</h3>
                 </div></NavLink>

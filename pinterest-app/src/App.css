@@ -230,3 +230,9 @@
     transform: rotate(360deg);
   }
 }
+
+.board__title {
+
+  margin: auto;
+  width: 300px;
+}

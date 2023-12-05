@@ -1,17 +1,14 @@
-import { PinsPageStore } from "../types"
+import { BoardPageStore, PinsPageStore } from "../types"
 import { combineReducers, configureStore, getDefaultMiddleware } from "@reduxjs/toolkit"
 import { pinReducer } from "./pages/home/pins/reducer"
+import { BoardReducer } from "./pages/board/reducer"
 
 export interface AppStorage {
     pages: {
         home: {
             pins: PinsPageStore,
-            // pinModalWindow: {
-            //     // saveOnBoard: PinSaveOnBoardStore,
-            //     // pinComplain: PinComplainStore
-            // }
-
         }
+        board: BoardPageStore,
         // create: {
         //     // createPin: PinCreatePinStore
         // }
@@ -23,7 +20,8 @@ export const store = configureStore<AppStorage>({
         pages: combineReducers({
             home: combineReducers({
                 pins: pinReducer,
-            })
+            }),
+            board: BoardReducer,
         })
     }),
 
